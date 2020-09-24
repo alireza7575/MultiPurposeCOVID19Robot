@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Client</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="
+    width: 100%;
+    height: 100%;
+    background: rgb(53, 53, 53)
+">
+
+    <div id="particles-js"></div>
+    <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1561436720/particles.js"></script>
+    <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1561436735/app.js"></script>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand">
+            <h1 class="text-light">UPM</h1>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/" target="blank">Home</a>
+
+
+                </li>
+                <li class="nav-item">
+                    <a id="remotePCBtn" class="nav-link" href="" target="blank">Client</a>
+                </li>
+                <li class="nav-item">
+                    <button id="thermalBtn" type="button" class="btn btn-secondary" onclick="topicControl()">Thermal
+                        camera</button>
+                </li>
+            </ul>
+
+            <div class="btn-group dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Setting
+                </button>
+                <div class="dropdown-menu">
+                    <a class="nav-link text-success" type="button" onclick="setRobotIP()" target="blank">Robot IP</a>
+                    <a class="nav-link text-danger" type="button" target="blank" onclick="setRemoteIP()">Remote PC
+                        IP</a>
+                </div>
+            </div>
+            <li class="nav-item">
+                <button id="uvBtn" type="button" class="btn btn-danger" onclick="uvControl()">UV</button>
+            </li>
+
+        </div>
+    </nav>
+
+    <div class="hero-wrap js-fullheight">
+        <div class="overlay"></div>
+        <div class="container-fluid pt-5">
+            <!-- SPEED -->
+
+
+            <!-- VIDEO -->
+            <div class="row my-4">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <h1 class="text-light">Robot</h1>
+
+                    <img src="" class="p-1 bg-dark" alt="" id="video" />
+
+                </div>
+                <div class="col-sm-5">
+
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="remoteCamera" width="560" height="415" class="embed-responsive-item"
+                            src="http://10.207.16.155:5000/stream" allowfullscreen></iframe> 
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: none;">
+                <div class="col-md-4"></div>
+                <div class=" col-md-4">
+                    <label for="robot-speed">
+                        <strong>Robot speed</strong>
+                    </label>
+                    <input type="range" min="15" max="80" class="custom-range" id="robot-speed">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <!-- JOYSTICK -->
+            <div class="row my-4" style="display: none;">
+                <div class="col">
+                    <div class="d-flex justify-content-center" style="width: 210px; height: 210px;">
+                        <div id="joystick"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+        </div>
+    </div>
+
+    <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script src="keyboardteleop.js"></script>
+    <script src="//yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js"></script>
+    <script src="webui.js"></script>
+
+</body>
+
+</html>
+<style>
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .center {
+        margin: auto;
+        width: 40%;
+
+        padding: 10px;
+    }
+</style>

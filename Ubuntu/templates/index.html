@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Client</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="
+    width: 100%;
+    height: 100%;
+    background: rgb(53, 53, 53)
+">
+
+    <div id="particles-js"></div>
+    <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1561436720/particles.js"></script>
+    <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1561436735/app.js"></script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand">
+            <h1 class="text-light">UPM</h1>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/" target="blank">Home</a>
+                <a class="nav-link " href="/local_stream" target="blank">Stream</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">camera</a>
+                    <div class="dropdown-menu">
+                        <a class="nav-link text-primary" href="/r">Take photo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link text-success" href="/start" target="blank">start</a>
+                        <a class="nav-link text-danger" href="/stop" target="blank">stop</a>
+                    </div>
+                </li>
+               
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid " style="position: absolute; ">
+        <div class="row center mt-5">
+            <h1 class="text-light">last photo:</h1>
+        </div>
+        <div class="row center ">
+            <img src="/images/last" style="border: 3px solid black" />
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+<style>
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .center {
+        margin: auto;
+        width: 40%;
+
+        padding: 10px;
+    }
+</style>
